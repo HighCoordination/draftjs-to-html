@@ -4,7 +4,7 @@ import { forEach, isEmptyString } from './common';
 * Mapping block-type to corresponding html tag.
 */
 const blockTypesMapping = {
-  unstyled: 'p',
+  unstyled: 'div',
   'header-one': 'h1',
   'header-two': 'h2',
   'header-three': 'h3',
@@ -243,11 +243,11 @@ export function sameStyleAsPrevious(
 */
 export function addInlineStyleMarkup(style, content) {
   if (style === 'BOLD') {
-    return `<strong>${content}</strong>`;
+    return `<b>${content}</b>`;
   } if (style === 'ITALIC') {
-    return `<em>${content}</em>`;
+    return `<i>${content}</i>`;
   } if (style === 'UNDERLINE') {
-    return `<ins>${content}</ins>`;
+    return `<u>${content}</u>`;
   } if (style === 'STRIKETHROUGH') {
     return `<del>${content}</del>`;
   } if (style === 'CODE') {
